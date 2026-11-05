@@ -12,10 +12,6 @@ class Passenger:
         return 20
 
 
-class EconomyPassenger(Passenger):
-    pass
-
-
 class FirstClassPassenger(Passenger):
     def __init__(self, name, current_location, destination, date, weight, lounge_access):
         super().__init__(name, current_location, destination, date)
@@ -54,9 +50,12 @@ class PremiumPassenger(Passenger):
         return 30
 
 
+class EconomyPassenger(Passenger):
+    pass
+
 economy = EconomyPassenger("Alice", "Kigali", "Nairobi", "2026-11-10")
 first = FirstClassPassenger("Brian", "Kigali", "Dubai", "2026-11-12", 25, True)
-premium = PremiumPassenger("Chantal", "Kigali", "London", "2026-11-15", 18, True)
+premium = PremiumPassenger("Bruno", "Kigali", "London", "2026-11-15", 18, True)
 
 economy.get_passenger_info()
 print("Allowance:", economy.get_weight_allowance(), "kg")
